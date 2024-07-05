@@ -20,16 +20,19 @@ type ButtonProps = BaseButtonProps & {
 const buttonCls = tv({
   // base cls
   slots: {
-    base: "rounded-lg shadow-sm hover:shadow-md text-white inline-flex items-center",
+    base: "rounded-lg shadow-sm hover:shadow-md text-white inline-flex items-center hover:bg-opacity-90 transition-colors",
     icon: "w-4 h-4 inline-flex items-center",
   },
   variants: {
     theme: {
       primary: "bg-primary",
-      secondary: "bg-secondary text-black",
+      secondary: "bg-secondary text-default-50",
       danger: "bg-error",
       success: "bg-success",
-      default: "bg-default text-gray-500",
+      default: {
+        base: "bg-default text-default-700",
+        icon: "text-black",
+      },
       warning: "bg-warning",
     },
     size: {
@@ -50,7 +53,7 @@ const buttonCls = tv({
       true: {
         base: "opacity-50 cursor-not-allowed",
         icon: "opacity-50",
-      }
+      },
     },
   },
 });
