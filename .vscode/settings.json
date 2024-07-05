@@ -1,0 +1,36 @@
+{
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "One Dark Pro",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.inlineSuggest.enabled": true,
+    "editor.fontFamily": "'fira code'",
+    "editor.fontLigatures": "true",
+    "editor.fontWeight": "normal",
+    "editor.fontSize": 12,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "always",
+      "source.fixAll": "always"
+    },
+    "tailwindCSS.experimental.classRegex": [
+      // obj with prefix cls, Styles const sizesCls ={ sm: 'text-sm'}
+      [
+        "Styles|Cls\\s*(?::\\s*[^=]+)?\\s*=\\s*([^;]*);",
+        "['\"`]([^'\"`]*)['\"`]"
+      ],
+      // JavaScript string variable   const css = `bg-red-300 ${a}`; or const css = "bg-red-300"
+      [
+        "(?:\\b(?:const|let)\\s+)?[\\w$_]*(?:[Ss]tyles|[Cc]lasses|[Cc]lassnames|[Cc]ls|[Cc]lx|[Cc]lass|[Cc]ss)[\\w\\d]*\\s*(?:=|\\+=)\\s*['`\"]([^'\"]*)['`\"]"
+      ],
+      // fn
+      ["(?:tw|cn|tv)\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"],
+      // dom
+      ["classList.(?:add|remove)\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"],
+      // data class
+      ["data-.*-class=['\"]([^'\"]*)"]
+    ]
+}
