@@ -1,4 +1,3 @@
-
 "use client";
 
 type Data = {
@@ -20,7 +19,6 @@ type Data = {
       | "danger"
       | "default";
   }[];
-  
 }[];
 
 export interface DemoProps {
@@ -30,6 +28,7 @@ export interface DemoProps {
 }
 
 export default function Demo({ data, title, comp }: DemoProps): JSX.Element {
+  const isTextArea = title.includes("TextArea");
   return (
     <div>
       <h1 className="uppercase">{title}</h1>
@@ -40,13 +39,13 @@ export default function Demo({ data, title, comp }: DemoProps): JSX.Element {
             <div className="flex flex-col gap-2" key={dataItem.title}>
               <h3>{dataItem.title}</h3>
               <hr />
-              <div className="flex gap-2 items-center py-2">
+              <div
+                className={`flex gap-2 flex-wrap py-2 ${isTextArea ? "items-start" : "items-center"}`}
+              >
                 {dataItem.items.map(({ title: titleItem, custom, ...rest }) => {
                   const Comp = comp || dataItem.comp;
                   return (
-                    <Comp key={titleItem} {...rest} {...custom}>
-                      {titleItem}
-                    </Comp>
+                    <Comp key={titleItem} placeholder={titleItem} title={titleItem} {...rest} {...custom} />
                   );
                 })}
               </div>
