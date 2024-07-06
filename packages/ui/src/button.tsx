@@ -2,6 +2,7 @@ import React, { forwardRef } from "react";
 import { tv } from "tailwind-variants";
 import type { ButtonProps as BaseButtonProps } from "@mui/base";
 import { useButton } from "@mui/base";
+import { colorVariants, getVariants } from "./helper";
 
 type ButtonProps = BaseButtonProps & {
   theme?:
@@ -12,6 +13,7 @@ type ButtonProps = BaseButtonProps & {
     | "default"
     | "warning";
   size?: "sm" | "md" | "lg";
+  variant?: "outline" | "solid" | "ghost";
   iconRight?: React.ReactElement;
   iconLeft?: React.ReactElement;
   iconCls?: string;
@@ -24,16 +26,18 @@ const buttonCls = tv({
     icon: "w-4 h-4 inline-flex items-center",
   },
   variants: {
+    variant: {
+      outline: false,
+      solid: false,
+      ghost: false,
+    },
     theme: {
-      primary: "bg-primary",
-      secondary: "bg-secondary text-default-50",
-      danger: "bg-error",
-      success: "bg-success",
-      default: {
-        base: "bg-default text-default-700",
-        icon: "text-black",
-      },
-      warning: "bg-warning",
+      primary: false,
+      secondary: false,
+      danger: false,
+      success: false,
+      default: false,
+      warning: false,
     },
     size: {
       sm: {
@@ -51,11 +55,45 @@ const buttonCls = tv({
     },
     disabled: {
       true: {
-        base: "opacity-50 cursor-not-allowed",
+        base: "opacity-50 cursor-not-allowed pointer-events-none",
         icon: "opacity-50",
       },
     },
   },
+  compoundVariants: [
+    {
+      variant: "outline",
+      className: "border border-primary text-primary",
+    },
+    {
+      variant: "outline",
+      theme: "secondary",
+      className: "border-secondary text-secondary",
+    },
+    {
+      variant: "outline",
+      theme: "danger",
+      className: "border-danger text-danger",
+    },
+    {
+      variant: "outline",
+      theme: "success",
+      className: "border-success text-success",
+    },
+    {
+      variant: "outline",
+      theme: "default",
+      className: "border-default text-default-700",
+    },
+    {
+      variant: "outline",
+      theme: "warning",
+      className: "border-warning text-warning",
+    },
+    ...getVariants(colorVariants.solidCls, 'solid')
+    
+   
+  ],
 });
 
 type IconsProps = {
@@ -79,6 +117,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       iconRight,
       iconLeft,
       iconCls,
+      variant = "solid",
       ...props
     },
     ref
@@ -88,7 +127,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       rootRef: ref,
     });
     const rootProps = getRootProps();
-    const { base, icon } = buttonCls({ size, theme, disabled });
+    const { base, icon } = buttonCls({
+      size,
+      theme,
+      disabled,
+      variant,
+    });
     const buttonCss = base({ className });
     const iconCss = icon({ className: iconCls });
 

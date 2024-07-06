@@ -45,7 +45,14 @@ export default function Demo({ data, title, comp }: DemoProps): JSX.Element {
                 {dataItem.items.map(({ title: titleItem, custom, ...rest }) => {
                   const Comp = comp || dataItem.comp;
                   return (
-                    <Comp key={titleItem} placeholder={titleItem} title={titleItem} {...rest} {...custom} />
+                    <Comp
+                      key={titleItem}
+                      placeholder={titleItem}
+                      {...rest}
+                      {...custom}
+                    >
+                      {titleItem}
+                    </Comp>
                   );
                 })}
               </div>
