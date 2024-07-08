@@ -47,6 +47,7 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": 1,
     "import/no-default-export": "off",
     "react/function-component-definition": 0,
-    "@typescript-eslint/consistent-type-definitions": 0
+    "@typescript-eslint/consistent-type-definitions": 0,
+    "eslint-comments/require-description": 0
   },
 };

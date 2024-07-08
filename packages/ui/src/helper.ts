@@ -1,12 +1,13 @@
+
 const solidCls = {
     default: "bg-default text-default-foreground",
     primary: "bg-primary text-primary-foreground",
     secondary: "bg-secondary text-secondary-foreground",
     success: "bg-success text-success-foreground",
     warning: "bg-warning text-warning-foreground",
-    danger: "bg-danger text-danger-foreground",
+    error: "bg-error text-error-foreground",
     foreground: "bg-foreground text-background",
-};
+} as const;
 
 const shadowCls = {
     default: "shadow-lg shadow-default/50 bg-default text-default-foreground",
@@ -14,19 +15,19 @@ const shadowCls = {
     secondary: "shadow-lg shadow-secondary/40 bg-secondary text-secondary-foreground",
     success: "shadow-lg shadow-success/40 bg-success text-success-foreground",
     warning: "shadow-lg shadow-warning/40 bg-warning text-warning-foreground",
-    danger: "shadow-lg shadow-danger/40 bg-danger text-danger-foreground",
+    error: "shadow-lg shadow-error/40 bg-error text-error-foreground",
     foreground: "shadow-lg shadow-foreground/40 bg-foreground text-background",
-};
+} as const;
 
 const borderedCls = {
-    default: "bg-transparent border-default text-foreground",
-    primary: "bg-transparent border-primary text-primary",
-    secondary: "bg-transparent border-secondary text-secondary",
-    success: "bg-transparent border-success text-success",
-    warning: "bg-transparent border-warning text-warning",
-    danger: "bg-transparent border-danger text-danger",
-    foreground: "bg-transparent border-foreground text-foreground",
-};
+    default: "border bg-transparent border-default text-foreground",
+    primary: "border bg-transparent border-primary text-primary",
+    secondary: "border bg-transparent border-secondary text-secondary",
+    success: "border bg-transparent border-success text-success",
+    warning: "border bg-transparent border-warning text-warning",
+    error: "border bg-transparent border-error text-error",
+    foreground: "border bg-transparent border-foreground text-foreground",
+} as const;
 
 const flatCls = {
     default: "bg-default/40 text-default-foreground",
@@ -34,9 +35,9 @@ const flatCls = {
     secondary: "bg-secondary/20 text-secondary",
     success: "bg-success/20 text-success-600 dark:text-success",
     warning: "bg-warning/20 text-warning-600 dark:text-warning",
-    danger: "bg-danger/20 text-danger dark:text-danger-500",
+    error: "bg-error/20 text-error dark:text-error-500",
     foreground: "bg-foreground/10 text-foreground",
-};
+} as const;
 
 const fadedCls = {
     default: "border-default bg-default-100 text-default-foreground",
@@ -44,9 +45,9 @@ const fadedCls = {
     secondary: "border-default bg-default-100 text-secondary",
     success: "border-default bg-default-100 text-success",
     warning: "border-default bg-default-100 text-warning",
-    danger: "border-default bg-default-100 text-danger",
+    error: "border-default bg-default-100 text-error",
     foreground: "border-default bg-default-100 text-foreground",
-};
+} as const;
 
 const lightCls = {
     default: "bg-transparent text-default-foreground",
@@ -54,9 +55,9 @@ const lightCls = {
     secondary: "bg-transparent text-secondary",
     success: "bg-transparent text-success",
     warning: "bg-transparent text-warning",
-    danger: "bg-transparent text-danger",
+    error: "bg-transparent text-error",
     foreground: "bg-transparent text-foreground",
-};
+} as const;
 
 const ghostCls = {
     default: "border-default text-default-foreground hover:!bg-default",
@@ -64,19 +65,18 @@ const ghostCls = {
     secondary: "border-secondary text-secondary hover:text-secondary-foreground hover:!bg-secondary",
     success: "border-success text-success hover:!text-success-foreground hover:!bg-success",
     warning: "border-warning text-warning hover:!text-warning-foreground hover:!bg-warning",
-    danger: "border-danger text-danger hover:!text-danger-foreground hover:!bg-danger",
+    error: "border-error text-error hover:!text-error-foreground hover:!bg-error",
     foreground: "border-foreground text-foreground hover:!bg-foreground",
-};
+} as const;
 
-export const getVariants = (obj: Record<string, string>, variants: string) => {
-  const result: Record<string, string> = {};
-  for (const key in obj) {
-    if (Object.prototype.hasOwnProperty.call(obj, key)) {
-      result[`${key}-${variants}`] = obj[key];
-    }
-  }
-  return result;
-};
+const radiusCls = {
+    sm: "rounded-sm",
+    md: "rounded-md",
+    lg: "rounded-lg",
+    full: "rounded-full",
+    none: "rounded-none",
+} as const;
+
 
 export const colorVariants = {
     solidCls,
@@ -86,4 +86,35 @@ export const colorVariants = {
     fadedCls,
     lightCls,
     ghostCls,
+    radiusCls
 };
+
+
+export const getVariantKey = (key: any) => {
+    const keys  = {
+        solidCls: 'solid',
+        borderedCls: 'outline',
+    } as any;
+    return keys[key] || key;
+};
+
+/**
+ * A function that generates variants based on the input object and variants string.
+ */
+export const getVariantsTheme = <T extends Record<string, Record<string, string>>>(obj: T = colorVariants) => {
+    const variants = Object.keys(obj).reduce((acc, key) => {
+        const themes = Object.keys(obj[key]);
+        const themeVariants = themes.map((theme) => {
+            return {
+                variant: getVariantKey(key),
+                theme,
+                className: obj[key][theme],
+            };
+        });
+        return acc.concat(themeVariants);
+    }, []);
+
+    console.log(variants);
+    return variants;
+};
+

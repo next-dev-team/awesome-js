@@ -1,39 +1,47 @@
 "use client";
 
+import { TextArea } from "@repo/ui-rc/button";
 import { Button } from "@repo/ui/button";
-import {  TextArea } from "@repo/ui-rc/button";
 import type { DemoProps } from "./components/demo";
 import Demo from "./components/demo";
 import { IconArrowLeft, IconArrowNext } from "./icons";
+
+const themeData = [
+  "primary",
+  "secondary",
+  "success",
+  "warning",
+  "error",
+  "default",
+] as const;
+const sizeData = ["sm", "md", "lg"] as const;
+const variantData = ["outline", "solid"] as const;
+const radiusData = ["sm", "md", "lg", 'full', 'none'] as const;
+
+const themeOption = themeData.map((theme) => ({
+  title: theme,
+  theme,
+}));
+
+const sizeOption = sizeData.map((size) => ({
+  title: size,
+  size,
+}));
+
+const variantOption = variantData.map((variant, idx) => {
+  const theme = themeData[idx];
+  return {
+    title: variant,
+    variant,
+    theme: variant === "solid" ? "success" : theme,
+  };
+});
 
 const data: DemoProps["data"] = [
   {
     title: "Theme",
     items: [
-      {
-        title: "primary",
-        theme: "primary",
-      },
-      {
-        title: "secondary",
-        theme: "secondary",
-      },
-      {
-        title: "success",
-        theme: "success",
-      },
-      {
-        title: "warning",
-        theme: "warning",
-      },
-      {
-        title: "danger",
-        theme: "danger",
-      },
-      {
-        title: "default",
-        theme: "default",
-      },
+      ...themeOption,
       {
         title: "Custom",
         custom: {
@@ -44,35 +52,41 @@ const data: DemoProps["data"] = [
   },
   {
     title: "Size",
-    items: [
-      {
-        title: "Small",
-        size: "sm",
-      },
-      {
-        title: "Medium",
-        size: "md",
-      },
-      {
-        title: "Large",
-        size: "lg",
-      },
-    ],
+    items: sizeOption,
+  },
+  {
+    title: "Variant",
+    items: variantOption,
+  },
+  {
+    title: "radius",
+    items: radiusData.map((radius) => ({
+      title: radius,
+      radius,
+    })),
   },
   {
     title: "With Icon",
-    comp: Button,
     items: [
       {
         title: "Left Icon",
+        variant: "outline",
         custom: {
           iconLeft: <IconArrowLeft />,
         },
       },
       {
         title: "Right Icon",
+        variant: "outline",
         custom: {
           iconRight: <IconArrowNext />,
+        },
+      },
+      {
+        title: "Loading",
+        variant: "solid",
+        custom: {
+          isAwait: true,
         },
       },
     ],
@@ -83,57 +97,32 @@ const textAreaCls: DemoProps["data"] = [
   {
     title: "Theme",
     items: [
-      {
-        title: "primary",
-        theme: "primary",
-      },
-      {
-        title: "secondary",
-        theme: "secondary",
-      },
-      {
-        title: "success",
-        theme: "success",
-      },
-      {
-        title: "warning",
-        theme: "warning",
-      },
-      {
-        title: "danger",
-        theme: "danger",
-      },
-      {
-        title: "default",
-        theme: "default",
-      },
+      ...themeOption,
       {
         title: "Custom",
         custom: {
           className: "bg-pink-100",
-          
         },
       },
     ],
   },
   {
-    title: "Resize",
+    title: "Size",
     items: [
       {
-        title: "Left Icon",
+        title: "Row 3",
         custom: {
           rows: 3,
         },
       },
       {
-        title: "Right Icon",
+        title: "Row 4",
         custom: {
           rows: 4,
         },
       },
     ],
   },
-  
 ];
 
 export default function Page(): JSX.Element {

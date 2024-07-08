@@ -5,7 +5,7 @@ import sharedConfig from "@repo/tailwind-config";
 
 const config: Pick<Config, "content" | "presets" | 'theme' | 'corePlugins'> = {
   content: [
-    "./src/app/**/*.tsx", 
+    "./src/app/**/*.{tsx,ts}", 
     // "../../packages/ui/*.{js,ts,jsx,tsx}",
     // "../../packages/ui-rc/*.{js,ts,jsx,tsx}",
   ],
