@@ -16,7 +16,7 @@ const themeData = [
 ] as const;
 const sizeData = ["sm", "md", "lg"] as const;
 const variantData = ["outline", "solid"] as const;
-const radiusData = ["sm", "md", "lg", 'full', 'none'] as const;
+const radiusData = ["sm", "md", "lg", "full", "none"] as const;
 
 const themeOption = themeData.map((theme) => ({
   title: theme,
@@ -85,6 +85,14 @@ const data: DemoProps["data"] = [
       {
         title: "Loading",
         variant: "solid",
+        custom: {
+          isAwait: true,
+        },
+      },
+      {
+        title: "Loading",
+        variant: "solid",
+        theme: "primary",
         custom: {
           isAwait: true,
         },

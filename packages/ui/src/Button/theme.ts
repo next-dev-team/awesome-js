@@ -36,8 +36,8 @@ export const buttonTheme = tv({
     },
     disabled: {
       true: {
-        base: "opacity-50 pointer-events-none cursor-not-allowed",
-        icon: "opacity-50",
+        base: "opacity-60 pointer-events-none cursor-not-allowed",
+        icon: "opacity-60",
       },
     },
     radius: colorVariants.radiusCls,
