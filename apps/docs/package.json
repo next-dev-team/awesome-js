@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "_build": "next build",
     "_dev": "next dev --port 3001",
-    "build": "next build",
-    "start": "next start",
     "lint": "next lint",
+    "start": "next start",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {

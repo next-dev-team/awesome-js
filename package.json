@@ -2,28 +2,27 @@
   "name": "tw-design-system",
   "version": "0.0.1",
   "description": "A react library developed with dumi",
+  "license": "MIT",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "scripts": {
-    "dev": "turbo dev",
-    "build": "turbo build",
-    "lint": "turbo lint",
-    "type-check": "turbo type-check",
-    "clean": "turbo clean",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "start": "npm run dev",
-    "dev_": "dumi dev",
-    "docs:build": "dumi build",
-    "docs:preview": "dumi preview",
-    "prepare": "husky install && dumi setup",
-    "doctor": "father doctor",
-    "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\""
-  },
-  "authors": [],
-  "license": "MIT",
   "files": [
     "dist"
   ],
+  "scripts": {
+    "build": "turbo build",
+    "clean": "turbo clean",
+    "dev": "turbo dev",
+    "dev_": "dumi dev",
+    "docs:build": "dumi build",
+    "docs:preview": "dumi preview",
+    "doctor": "father doctor",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "turbo lint",
+    "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
+    "prepare": "husky install && dumi setup",
+    "start": "npm run dev",
+    "type-check": "turbo type-check"
+  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -46,11 +45,8 @@
       "prettier --parser=typescript --write"
     ]
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "devDependencies": {
-    "@babel/runtime":"^7.24.7",
+    "@babel/runtime": "^7.24.7",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@types/react": "^18.3.3",
@@ -66,5 +62,10 @@
     "prettier-plugin-packagejson": "^2.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
-  }
+  },
+  "packageManager": "pnpm@7.14.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "authors": []
 }

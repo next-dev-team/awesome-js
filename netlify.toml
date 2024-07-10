@@ -5,7 +5,7 @@ PNPM_VERSION = "8"
 
 [build]
 # for demo or preview
-command = "pnpm install --ignore-scripts --frozen-lock --prod && pnpm prepare && pnpm build && pnpm docs:build"
+command = "pnpm install --ignore-scripts --frozen-lock && pnpm prepare && pnpm build && pnpm docs:build"
 publish = "dist"
 
 [[redirects]]
