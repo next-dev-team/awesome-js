@@ -1,12 +1,17 @@
 {
-  "name": "tw-design-system",
+  "name": "awesome-js",
   "version": "0.0.1",
   "description": "A react library developed with dumi",
   "license": "MIT",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "private": true,
   "files": [
     "dist"
+  ],
+  "workspaces": [
+    "apps/*",
+    "packages/*"
   ],
   "scripts": {
     "build": "turbo build",
@@ -19,7 +24,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo lint",
     "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
-    "prepare": "husky install && dumi setup",
+    "prepare": "dumi setup",
     "start": "npm run dev",
     "type-check": "turbo type-check"
   },
@@ -52,7 +57,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@umijs/lint": "^4.3.1",
-    "dumi": "^2.4.5",
+    "dumi": "^2.4.13",
     "eslint": "^9.6.0",
     "father": "^4.4.4",
     "husky": "^9.0.11",
@@ -62,11 +67,14 @@
     "prettier-plugin-packagejson": "^2.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "turbo": "^2.0.6"
+    "turbo": "^2.2.3"
   },
-  "packageManager": "pnpm@7.14.0",
   "publishConfig": {
     "access": "public"
   },
-  "authors": []
+  "authors": [],
+  "packageManager": "yarn@1.22.19",
+  "engines": {
+    "node": ">=18"
+  }
 }
