@@ -10,12 +10,13 @@ title: Select01
 `Select` is completely use antd Select
 
 ```tsx
-import { SelectDemo } from '@repo/ui-rc/Select01'
+import { SelectDemo, SelectDemo01 } from '@repo/ui-rc/Select01'
 
 export default () => {
   return (
     <>
       <SelectDemo />
+      <SelectDemo01 />
     </>
   )
 }

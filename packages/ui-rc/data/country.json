@@ -1,0 +1,71 @@
+[
+  {
+    "id": "5LOkAdWNDqgVomKP",
+    "iso": "AF",
+    "name": "AFGHANISTAN",
+    "nice_name": "Afghanistan",
+    "iso3": "AFG",
+    "phone_code": 93,
+    "icon": "https://storage.googleapis.com/umpay-singapore/flags/af.png",
+    "main_currency": "AFN",
+    "active": 1,
+    "country_id": 1
+  },
+  {
+    "id": "xPeaNArJeWyE27lg",
+    "iso": "AL",
+    "name": "ALBANIA",
+    "nice_name": "Albania",
+    "iso3": "ALB",
+    "phone_code": 355,
+    "icon": "https://storage.googleapis.com/umpay-singapore/flags/al.png",
+    "main_currency": "USD",
+    "active": 1,
+    "country_id": 2
+  },
+  {
+    "id": "5JGY7ZWDkbpOvPQR",
+    "iso": "DZ",
+    "name": "ALGERIA",
+    "nice_name": "Algeria",
+    "iso3": "DZA",
+    "phone_code": 213,
+    "icon": "https://storage.googleapis.com/umpay-singapore/flags/dz.png",
+    "main_currency": "DZD",
+    "active": 1,
+    "country_id": 3
+  },
+  {
+    "id": "7MAYJlq1nbR6BKj2",
+    "iso": "AS",
+    "name": "AMERICAN SAMOA",
+    "nice_name": "American Samoa",
+    "iso3": "ASM",
+    "phone_code": 1684,
+    "main_currency": "USD",
+    "active": 1,
+    "country_id": 4
+  },
+  {
+    "id": "K7L1M6q8vWzRDN3w",
+    "iso": "AD",
+    "name": "ANDORRA",
+    "nice_name": "Andorra",
+    "iso3": "AND",
+    "phone_code": 376,
+    "main_currency": "EUR",
+    "active": 1,
+    "country_id": 5
+  },
+  {
+    "id": "9ePOdJb01WB6EN1R",
+    "iso": "AO",
+    "name": "ANGOLA",
+    "nice_name": "Angola",
+    "iso3": "AGO",
+    "phone_code": 244,
+    "main_currency": "AOA",
+    "active": 1,
+    "country_id": 6
+  }
+]
