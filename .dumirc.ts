@@ -56,8 +56,8 @@ export default defineConfig({
   //     pathRewrite: { '^/backend-api/v2': '/backend-api/v2' },
   //   },
   // },
-  // plugins: [require.resolve('@umijs/plugins/dist/tailwindcss')],
-  // tailwindcss: {},
+  plugins: [require.resolve('@umijs/plugins/dist/tailwindcss')],
+  tailwindcss: {},
   themeConfig: {
     ...themeConfig,
     // nav: [{ title: 'Docs', link: '/packages/utils' }],

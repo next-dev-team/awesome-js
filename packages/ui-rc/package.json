@@ -24,7 +24,8 @@
   "dependencies": {
     "rc-textarea": "^1.7.0",
     "clsx": "^2.1.1",
-    "tailwind-variants": "^0.2.1"
+    "tailwind-variants": "^0.2.1",
+    "react-tailwindcss-select": "^1.8.5"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
