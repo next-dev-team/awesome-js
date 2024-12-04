@@ -1,4 +1,6 @@
-# test
+# Awesome JS
+
+[Edit](https://github.com/next-dev-team/awesome-js/edit/main/docs/guide.md)
 
 [![NPM version](https://img.shields.io/npm/v/test.svg?style=flat)](https://npmjs.org/package/test)
 [![NPM downloads](http://img.shields.io/npm/dm/test.svg?style=flat)](https://npmjs.org/package/test)
