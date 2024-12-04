@@ -1,3 +1,10 @@
+---
+nav:
+  title: Coding Tips
+toc: content
+title: Tips
+---
+
 # Electron Js
  ## Make all links open with the browser, not with the application
    - createWindow fn 
