@@ -1,11 +1,10 @@
 [build.environment]
 NODE_VERSION = "18"
 NPM_FLAGS = "--version"
-PNPM_VERSION = "8"
 
 [build]
 # for demo or preview
-command = "yarn install && yarn prepare && yarn build && yarn docs:build"
+command = "yarn install && yarn build && yarn docs:build"
 publish = "dist"
 
 [[redirects]]
