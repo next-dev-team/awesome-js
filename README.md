@@ -38,6 +38,8 @@ $ pnpm run docs:preview
 
 # check your project for potential problems
 $ pnpm run doctor
+# download specific folder eg umijs example
+npx degit umijs/umi/examples/qiankun-master qiankun-master
 ```
 
 ## LICENSE

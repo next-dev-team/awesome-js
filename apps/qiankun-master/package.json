@@ -1,0 +1,20 @@
+{
+  "name": "qiankun-master",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "cross-env PORT=8889 max dev",
+    "preview": "max preview --port 8889",
+    "setup": "max setup",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "@umijs/max": "^4.4.4",
+    "qiankun": "^2.10.16",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
