@@ -17,6 +17,7 @@
     "build": "turbo build",
     "clean": "turbo clean",
     "dev": "turbo dev",
+    "dev:qiankun": "turbo dev:qiankun",
     "dev_": "dumi dev",
     "docs:build": "dumi build",
     "docs:preview": "dumi preview",

@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "cross-env PORT=5555 max dev",
+    "dev:qiankun": "npm run dev",
     "e2e:ci": "npm run e2e:ci:dev",
     "e2e:ci:dev": "cross-env PORT=8889 start-test start:all-qiankun:dev 8889 test:ci",
     "e2e:ci:preview": "cross-env PORT=8889 start-test start:all-qiankun:preview 8889 test:ci:preview",

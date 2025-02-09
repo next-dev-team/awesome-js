@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "cross-env PORT=8889 max dev",
+    "dev:qiankun": "npm run dev",
     "preview": "max preview --port 8889",
     "setup": "max setup",
     "start": "npm run dev"

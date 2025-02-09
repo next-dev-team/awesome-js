@@ -5,6 +5,7 @@
   "scripts": {
     "build": "max build",
     "dev": "max dev",
+    "dev:qiankun": "npm run dev",
     "preview": "max preview --port 7002",
     "setup": "max setup",
     "start": "npm run dev"
