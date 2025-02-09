@@ -1,5 +1,6 @@
 export default {
   model: {},
+  initialState: {},
   qiankun: {
     slave: {},
   },
@@ -11,4 +12,5 @@ export default {
     { path: '/basename', component: 'basename' },
   ],
   hash: false,
+  mfsu: false,
 };

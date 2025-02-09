@@ -1,5 +1,4 @@
-import React from 'react';
-import { MicroAppLink } from 'umi';
+import { MicroAppLink } from '@umijs/max';
 
 export default function HomePage() {
   return (

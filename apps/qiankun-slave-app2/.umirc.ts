@@ -1,4 +1,5 @@
 export default {
+  initialState: {},
   qiankun: {
     slave: {},
   },
@@ -10,4 +11,5 @@ export default {
   ],
   runtimePublicPath: {},
   hash: false,
+  mfsu: false,
 };

@@ -1,5 +1,10 @@
-import React from 'react';
+import { useLocation } from 'umi';
 
-export default function HomePage() {
-  return <div>Slave Home Page </div>;
+function MyPage(props) {
+  const { state } = useLocation();
+  console.log('props', state);
+
+  return <div>{state.from}</div>;
 }
+
+export default MyPage;

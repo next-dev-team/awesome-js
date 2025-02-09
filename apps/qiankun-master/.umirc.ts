@@ -1,18 +1,26 @@
-export default {
+import { defineConfig } from '@umijs/max';
+
+export default defineConfig({
+  initialState: {},
+  model: {},
   qiankun: {
     master: {
       apps: [
         {
           name: 'slave',
           entry: 'http://127.0.0.1:5555', // your slave app address
+          props: {
+            accountOnClick: (event) => {
+              console.log(event)
+
+            },
+            accountName: 'Alex',
+            accountAge: 112,
+          },
         },
         {
           name: 'slave-app2',
           entry: 'http://127.0.0.1:7002', // your slave app address
-        },
-        {
-          name: 'slave-mf',
-          entry: 'http://127.0.0.1:8000', // your slave app address
         },
       ],
     },
@@ -46,4 +54,4 @@ export default {
     },
   ],
   mfsu: false,
-};
+});
