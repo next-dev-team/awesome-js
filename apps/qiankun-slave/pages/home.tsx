@@ -1,10 +1,20 @@
-import { useLocation } from 'umi';
+import { connectMaster, useLocation, useModel } from 'umi';
 
 function MyPage(props) {
   const { state } = useLocation();
-  console.log('props', state);
-
-  return <div>{state.from}</div>;
+  const d = useModel('@@qiankunStateFromMaster');
+  console.log('props', d);
+  return (
+    <button
+      onClick={() => {
+        props.setGlobalState({
+          name: 'ss',
+        });
+      }}
+    >
+      test
+    </button>
+  );
 }
 
-export default MyPage;
+export default connectMaster(MyPage);

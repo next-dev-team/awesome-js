@@ -31,6 +31,7 @@ export default defineConfig({
     { path: '/', redirect: '/home' },
     { path: '/home', component: 'index' },
     { path: '/nav', component: 'never' },
+    { path: '/callback', component: 'callback' },
     {
       path: '/slave/*',
       microApp: 'slave',
