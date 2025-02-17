@@ -20,6 +20,6 @@ app.get("/callback", (req: Request, res: Response) => {
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port \x1b[34mhttp://localhost:${PORT}\x1b[0m`);
 });
 
