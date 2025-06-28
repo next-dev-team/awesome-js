@@ -8,13 +8,7 @@ description:
 globs:
 alwaysApply: true
 ---
-
-# Pinokio MMO Project: Codebase Summary & Team Rules
-
-## Tech Stack
+Appreviation c7: means use context7 MCP Server
 
 
-- **Monorepo**: Multiple apps (`pinokio`, `tron`, `nodejs`)
-
-
-
+Appreviation r: means use always following rules/xx to make correct anwser

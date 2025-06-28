@@ -80,5 +80,8 @@
   "packageManager": "yarn@1.22.19",
   "engines": {
     "node": ">=18"
+  },
+  "dependencies": {
+    "@tanstack/react-virtual": "^3.13.12"
   }
 }
