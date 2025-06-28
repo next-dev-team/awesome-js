@@ -1,0 +1,11 @@
+# Ignore specific file `config.json`
+config.json
+
+# Ignore `dist` directory and all files inside
+dist/
+
+# Ignore all files with a `.log` extension
+*.log
+.cursor/mcp.json
+dist-electron
+dist-web

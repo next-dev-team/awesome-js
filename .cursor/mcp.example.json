@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp@latest"
+      ]
+    },
+    "consult7": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "consult7",
+        "google",
+        ""
+      ],
+      "env": {}
+    }
+  }
+}
